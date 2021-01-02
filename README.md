@@ -7,7 +7,7 @@ dwm 是 X 服务的一个非常轻量的、快速的动态窗口管理器。
 * [安装前的准备](#安装前的准备)
 * [安装](#安装)
 * [运行](#运行)
-    * [使用 alacrittyartx 启动 dwm](#使用-alacrittyartx-启动-dwm)
+    * [使用 startx 启动 dwm](#使用-startx-启动-dwm)
 * [配置](#配置)
 * [补丁](#补丁)
 * [使用方法](#使用方法)
@@ -76,9 +76,9 @@ make clean inalacrittyall
 
 ## 运行
 
-### 使用 alacrittyartx 启动 dwm
+### 使用 startx 启动 dwm
 
-把下面这一行添加到你的 `.xinitrc` 中，以使用 alacrittyartx 来启动 dwm。  
+把下面这一行添加到你的 `.xinitrc` 中，以使用 startx 来启动 dwm。  
 
 ```
 exec dwm
