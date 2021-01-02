@@ -33,11 +33,10 @@ dwm 是 X 服务的一个非常轻量的、快速的动态窗口管理器。
 ## 安装前的准备
 
 - 你需要有 `Xlib` 头文件。  
-- 你最好拥有 `picom` 或其他窗口渲染器，并在 `scripts` 文件夹中的 `autoalacrittyart.sh` 脚本中启动它。  
+- 你最好拥有 `picom` 或其他窗口渲染器，并在 `scripts` 文件夹中的 `autostart.sh` 脚本中启动它。  
 - 你最好拥有 [Nerd-Fonts](https://github.com/ryanoasis/nerd-fonts) 字体，因为状态栏的脚本需要用到这些字体。  
 - 更改 `config.def.h` 或 `config.h` 中的设置以符合你的喜好。  
-- 更改 `scripts` 文件夹中的 `autoalacrittyart.sh` 脚本（即开机启动项），以符合你的要求。  
-- 更改所有文件中的路径以符合你的电脑上的路径（默认的安装路径为 `~/Programs/Softwares/dwm` 目录下，默认的壁纸路径为 `~/Pictures/Wallpapers` 路径下）。  
+- 更改 `scripts` 文件夹中的 `autostart.sh` 脚本（即开机启动项），以符合你的要求。  
 - 我的 dwm 需要的软件：
     - alacritty
     - dmenu
@@ -71,7 +70,7 @@ cd .dwm
 - 运行以下命令来编译和安装 dwm（可能需要作为 root 用户来执行命令）：  
 
 ```
-make clean inalacrittyall
+make clean install
 ```
 
 ## 运行
@@ -109,16 +108,16 @@ Dwm 的配置是通过自定义 `config.h` 和重新编译安装来实现的。
 
 ## 补丁
 
-这些补丁的具体作用详见 [这里](https://github.com/LogicSkky/my-dwm/tree/maalacrittyer/patches) 。
+这些补丁的具体作用详见 [这里](https://github.com/LogicSkky/my-dwm/tree/master/patches) 。
 
-- [alphasyalacrittyray.diff](https://github.com/theniceboy/dwm/blob/maalacrittyer/patches/alphasyalacrittyray.diff)
-- [dwm-autoalacrittyart-20161205-bb3bd6f.diff](https://dwm.suckless.org/patches/autoalacrittyart/)
+- [alphasystray.diff](https://github.com/theniceboy/dwm/blob/master/patches/alphasystray.diff)
+- [dwm-autostart-20161205-bb3bd6f.diff](https://dwm.suckless.org/patches/autostart/)
 - [dwm-awesomebar-20191003-80e2a76.diff](https://dwm.suckless.org/patches/awesomebar/)
 - [dwm-fullscreen-6.2.diff](https://dwm.suckless.org/patches/fullscreen/)
 - [dwm-hide_vacant_tags-6.2.diff](https://dwm.suckless.org/patches/hide_vacant_tags/)
 - [dwm-noborder-6.2.diff](https://dwm.suckless.org/patches/noborder/)
 - [dwm-pertag-20170513-ceac8c9.diff](https://dwm.suckless.org/patches/pertag/)
-- [dwm-rotatealacrittyack-20161021-ab9571b.diff](https://dwm.suckless.org/patches/rotatealacrittyack/)
+- [dwm-rotatestack-20161021-ab9571b.diff](https://dwm.suckless.org/patches/rotatestack/)
 - [dwm-scratchpad-6.2.diff](https://dwm.suckless.org/patches/scratchpad/)
 - [dwm-vanitygaps-20190508-6.2.diff](https://dwm.suckless.org/patches/vanitygaps/)
 
@@ -136,7 +135,7 @@ Dwm 的配置是通过自定义 `config.h` 和重新编译安装来实现的。
 
 dwm 下的桌面其实并不是真正的桌面，而是显示打了某一个标签的某些窗口。  
 
-假设我的电脑上有五个窗口，分别为 `chromium`，`alacritty`，`NeoVim`，`Ranger`，`htop`。  
+假设我的电脑上有五个窗口，分别为 `chromium`，`st`，`NeoVim`，`Ranger`，`htop`。  
 其中，每个窗口都打上了标签：
 
 | 窗口                      | 标签 |
