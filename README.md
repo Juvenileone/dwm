@@ -7,8 +7,7 @@ dwm 是 X 服务的一个非常轻量的、快速的动态窗口管理器。
 * [安装前的准备](#安装前的准备)
 * [安装](#安装)
 * [运行](#运行)
-    * [使用登录管理器启动 dwm](#使用登录管理器启动-dwm)
-    * [使用 startx 启动 dwm](#使用-startx-启动-dwm)
+    * [使用 alacrittyartx 启动 dwm](#使用-alacrittyartx-启动-dwm)
 * [配置](#配置)
 * [补丁](#补丁)
 * [使用方法](#使用方法)
@@ -34,57 +33,52 @@ dwm 是 X 服务的一个非常轻量的、快速的动态窗口管理器。
 ## 安装前的准备
 
 - 你需要有 `Xlib` 头文件。  
-- 你最好拥有 `picom` 或其他窗口渲染器，并在 `scripts` 文件夹中的 `autostart.sh` 脚本中启动它。  
+- 你最好拥有 `picom` 或其他窗口渲染器，并在 `scripts` 文件夹中的 `autoalacrittyart.sh` 脚本中启动它。  
 - 你最好拥有 [Nerd-Fonts](https://github.com/ryanoasis/nerd-fonts) 字体，因为状态栏的脚本需要用到这些字体。  
 - 更改 `config.def.h` 或 `config.h` 中的设置以符合你的喜好。  
-- 更改 `scripts` 文件夹中的 `autostart.sh` 脚本（即开机启动项），以符合你的要求。  
+- 更改 `scripts` 文件夹中的 `autoalacrittyart.sh` 脚本（即开机启动项），以符合你的要求。  
 - 更改所有文件中的路径以符合你的电脑上的路径（默认的安装路径为 `~/Programs/Softwares/dwm` 目录下，默认的壁纸路径为 `~/Pictures/Wallpapers` 路径下）。  
 - 我的 dwm 需要的软件：
-    - [我的 st](https://github.com/LogicSkky/my-st)
-    - [我的 dmenu](https://github.com/LogicSkky/my-dmenu)
+    - alacritty
+    - dmenu
     - feh
     - amixer
     - flameshot
-    - google-chrome
+    - chromium
+    - xorg-xbacklight
     - picom
 ## 安装
-
-（以安装在 `~/Programs/Softwares/dwm` 路径为例）
 
 - 进入相应的目录：
 
 ```
-cd ~/Programs/Softwares
+cd ~
 ```
 
 - 克隆这个仓库：
 
 ```
-git clone https://github.com/logicskky/dwm.git
+git clone https://github.com/Juvenileone/dwm.git .dwm
 ```
 
 - 进入这个文件夹：
 
 ```
-cd dwm
+cd .dwm
 ```
 
 - 编辑 `config.mk` 这个文件来匹配你的本地设置（dwm 默认安装到 `/usr/local` 命名空间下）。  
 - 运行以下命令来编译和安装 dwm（可能需要作为 root 用户来执行命令）：  
 
 ```
-make clean install
+make clean inalacrittyall
 ```
 
 ## 运行
 
-### 使用登录管理器启动 dwm
+### 使用 alacrittyartx 启动 dwm
 
-把 `others` 文件夹里的 `dwm.desktop` 复制到 `/usr/share/xsessions` 这个文件夹下，之后在登录管理器选择启动 dwm 即可。
-
-### 使用 startx 启动 dwm
-
-把下面这一行添加到你的 `.xinitrc` 中，以使用 startx 来启动 dwm。  
+把下面这一行添加到你的 `.xinitrc` 中，以使用 alacrittyartx 来启动 dwm。  
 
 ```
 exec dwm
@@ -115,16 +109,16 @@ Dwm 的配置是通过自定义 `config.h` 和重新编译安装来实现的。
 
 ## 补丁
 
-这些补丁的具体作用详见 [这里](https://github.com/LogicSkky/my-dwm/tree/master/patches) 。
+这些补丁的具体作用详见 [这里](https://github.com/LogicSkky/my-dwm/tree/maalacrittyer/patches) 。
 
-- [alphasystray.diff](https://github.com/theniceboy/dwm/blob/master/patches/alphasystray.diff)
-- [dwm-autostart-20161205-bb3bd6f.diff](https://dwm.suckless.org/patches/autostart/)
+- [alphasyalacrittyray.diff](https://github.com/theniceboy/dwm/blob/maalacrittyer/patches/alphasyalacrittyray.diff)
+- [dwm-autoalacrittyart-20161205-bb3bd6f.diff](https://dwm.suckless.org/patches/autoalacrittyart/)
 - [dwm-awesomebar-20191003-80e2a76.diff](https://dwm.suckless.org/patches/awesomebar/)
 - [dwm-fullscreen-6.2.diff](https://dwm.suckless.org/patches/fullscreen/)
 - [dwm-hide_vacant_tags-6.2.diff](https://dwm.suckless.org/patches/hide_vacant_tags/)
 - [dwm-noborder-6.2.diff](https://dwm.suckless.org/patches/noborder/)
 - [dwm-pertag-20170513-ceac8c9.diff](https://dwm.suckless.org/patches/pertag/)
-- [dwm-rotatestack-20161021-ab9571b.diff](https://dwm.suckless.org/patches/rotatestack/)
+- [dwm-rotatealacrittyack-20161021-ab9571b.diff](https://dwm.suckless.org/patches/rotatealacrittyack/)
 - [dwm-scratchpad-6.2.diff](https://dwm.suckless.org/patches/scratchpad/)
 - [dwm-vanitygaps-20190508-6.2.diff](https://dwm.suckless.org/patches/vanitygaps/)
 
@@ -142,23 +136,23 @@ Dwm 的配置是通过自定义 `config.h` 和重新编译安装来实现的。
 
 dwm 下的桌面其实并不是真正的桌面，而是显示打了某一个标签的某些窗口。  
 
-假设我的电脑上有五个窗口，分别为 `google-chrome`，`st`，`NeoVim`，`Ranger`，`htop`。  
+假设我的电脑上有五个窗口，分别为 `chromium`，`alacritty`，`NeoVim`，`Ranger`，`htop`。  
 其中，每个窗口都打上了标签：
 
-| 窗口                    | 标签 |
-|-------------------------|------|
-| `google-chrome` 和 `st` | `1`  |
-| `NeoVim`                | `3`  |
-| `Ranger` 和 `htop`      | `6`  |
+| 窗口                      | 标签 |
+| ------------------------- | ---- |
+| `chromium` 和 `alacritty` | `1`  |
+| `NeoVim`                  | `3`  |
+| `Ranger` 和 `htop`        | `6`  |
 
-那么，如果我切换到 `1` 号桌面，那么实际上就是显示打了 `1` 这个标签的窗口，即为显示 `google-chrome` 和 `st` 这两个窗口。  
+那么，如果我切换到 `1` 号桌面，那么实际上就是显示打了 `1` 这个标签的窗口，即为显示 `chromium` 和 `alacritty` 这两个窗口。  
 接下来，我又给某些窗口增加了一些标签：
 
-| 窗口                    | 标签       |
-|-------------------------|------------|
-| `google-chrome` 和 `st` | `1`        |
-| `NeoVim`                | `3` 和 `5` |
-| `Ranger` 和 `htop`      | `6` 和 `5` |
+| 窗口                      | 标签       |
+| ------------------------- | ---------- |
+| `chromium` 和 `alacritty` | `1`        |
+| `NeoVim`                  | `3` 和 `5` |
+| `Ranger` 和 `htop`        | `6` 和 `5` |
 
 那么在现在，如果我切换到 `5` 号桌面，实际上就是显示打了 `5` 这个标签的窗口，即为显示 `NeoVim`、`Ranger`和`htop`。  
 但需要注意的是，由于这三个窗口都各打了两个标签，所以在别的相应的桌面也能看到这些窗口，如切换到 `3` 号桌面也会显示 `NeoVim` 这个窗口。  
@@ -192,10 +186,10 @@ xsetroot -name "Hello"
 
 #### 1.1 移动焦点
 
-| 快捷键  | 作用               |
-|---------|--------------------|
-| `Mod+k` | 往上（左）移动焦点 |
-| `Mod+j` | 往下（右）移动焦点 |
+| 快捷键      | 作用               |
+| ----------- | ------------------ |
+| `Mod+Left`  | 往上（左）移动焦点 |
+| `Mod+Right` | 往下（右）移动焦点 |
 
 #### 1.2 关于桌面和标签
 
@@ -211,37 +205,39 @@ xsetroot -name "Hello"
 
 #### 1.3 打开软件
 
-| 快捷键       | 作用                 |
-|--------------|----------------------|
-| `Mod+Return` | 打开 `st`            |
-| `Mod+d`      | 打开 `dmenu`         |
-| `Mod+c`      | 打开 `Google-Chrome` |
+| 快捷键       | 作用             |
+| ------------ | ---------------- |
+| `Mod+Return` | 打开 `alacritty` |
+| `Mod+d`      | 打开 `dmenu`     |
+| `Mod+c`      | 打开 `chromium`  |
 
 #### 1.4 更改窗口布局
 
 | 快捷键             | 作用                                       |
-|--------------------|--------------------------------------------|
+| ------------------ | ------------------------------------------ |
 | `Mod+Shift+t`      | 切换到平铺模式（`Tile`）                   |
 | `Mod+Shift+f`      | 切换到浮动模式（`Float`）                  |
 | `Mod+Shift+m`      | 切换到单页模式（`Monocle`）                |
 | `Mod+f`            | 进入进入全屏模式                           |
 | `Mod+Space`        | 切换到上一种窗口摆放方式                   |
 | `Mod+Shift+Space`  | 将当前窗口切换到浮动模式/平铺模式          |
-| `Mod+Shift+k`      | 将窗口往上（左）移动                       |
-| `Mod+Shift+j`      | 将窗口往下（右）移动                       |
+| `Mod+Shift+Left`   | 将窗口往上（左）移动                       |
+| `Mod+Shift+Right`  | 将窗口往下（右）移动                       |
 | `Mod+o`            | 将窗口横向分割                             |
 | `Mod+p`            | 将窗口纵向分割                             |
 | `Mod+h`            | 将窗口的纵向分割线左移                     |
 | `Mod+l`            | 将窗口的纵向分割线右移                     |
 | `Mod+Shift+Return` | 将当前窗口变成主窗口，或者放到栈区域的顶部 |
 
-#### 1.5 关于声音的控制
+#### 1.5 关于声音和亮度的控制
 
-| 快捷键        | 作用          |
-|---------------|---------------|
-| `Mod+Shift+w` | 把声音升高 5% |
-| `Mod+Shift+s` | 把声音降低 5% |
-| `Mod+Shift+e` | 打开/关闭声音 |
+| 快捷键    | 作用          |
+| --------- | ------------- |
+| `Mod+F3`  | 把声音升高 5% |
+| `Mod+F2`  | 把声音降低 5% |
+| `Mod+F1`  | 打开/关闭声音 |
+| `Mod+F11` | 亮度调暗10%   |
+| `Mod+F12` | 亮度调亮10%   |
 
 #### 1.6 关于窗口之间的缝隙
 
@@ -268,17 +264,16 @@ xsetroot -name "Hello"
 #### 1.7 其他功能
 
 | 快捷键             | 作用                      |
-|--------------------|---------------------------|
+| ------------------ | ------------------------- |
 | `Mod+'`            | 打开/关闭 `scratchpad`    |
 | `Mod+b`            | 打开/关闭状态栏           |
-| `Mod+Shift+d`      | 更换壁纸                  |
-| `Mod+Shift+a`      | 打开 `flameshot` 进行截图 |
+| `Mod+Print`        | 打开 `flameshot` 进行截图 |
 | `Mod+Ctrl+q`       | 关闭当前窗口              |
 | `Mod+Ctrl+Shift+c` | 关闭 `dwm`                |
-| `Mod+,`            | 暂不了解该快捷键的功能    |
-| `Mod+.`            | 暂不了解该快捷键的功能    |
-| `Mod+Shift+,`      | 暂不了解该快捷键的功能    |
-| `Mod+Shift+.`      | 暂不了解该快捷键的功能    |
+| `Mod+,`            | 切换到左边显示器          |
+| `Mod+.`            | 切换到右边显示器          |
+| `Mod+Shift+,`      | 将窗口移动到左边显示器    |
+| `Mod+Shift+.`      | 将窗口移动到右边显示器    |
 
 ### 2 鼠标点击
 
@@ -298,9 +293,9 @@ xsetroot -name "Hello"
 
 #### 2.2 打开软件
 
-| 鼠标动作           | 作用      |
-|--------------------|-----------|
-| `中键状态栏上的 D` | 打开 `st` |
+| 鼠标动作           | 作用             |
+| ------------------ | ---------------- |
+| `中键状态栏上的 D` | 打开 `alacritty` |
 
 #### 2.3 关于桌面和标签
 
