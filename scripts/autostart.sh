@@ -9,3 +9,5 @@ picom &
 /bin/bash ~/.dwm/scripts/wp-autochange.sh &
 sleep 1
 fcitx5 &
+sleep
+diodon

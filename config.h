@@ -91,10 +91,10 @@ static const char *downbacklightcmd[]	= { "/home/volta/.dwm/scripts/backlight-do
 static const char *screenshotcmd[]  = { "/home/volta/.dwm/scripts/screenshot.sh",  NULL };
 
 static const char scratchpadname[] = "scratchpad";
-static const char *scratchpadcmd[] = { "alacritty" , "-t" , scratchpadname, "-d", "60", "20", NULL };
+static const char *scratchpadcmd[] = { "alacritty" , "-t" , scratchpadname, "--config-file=/home/volta/.config/alacritty/scratch.yml", NULL };
 
-// static const char scratchpadname[] = "scratchpad";
-// static const char *scratchpadcmd[] = { "st" , "-t" , scratchpadname, "-g", "60x20", NULL };
+static const char *clipboard[] = { "diodon", NULL };
+static const char *filemanager[] = {"pcmanfm", NULL};
 
 
 static const char *lockcmd[] = {"i3lock-fancy", NULL};
@@ -110,8 +110,10 @@ static Key keys[] = {
 	{ MODKEY,			            XK_F1,         spawn,          {.v = mutevolcmd }    },
 	{ MODKEY,             			XK_F12,        spawn,          {.v = upbacklightcmd }   },
 	{ MODKEY,             			XK_F11,        spawn,          {.v = downbacklightcmd } },
-	{ MODKEY,             			XK_Print,      spawn,          {.v = screenshotcmd } },
+	{ NULL,             			XK_Print,      spawn,          {.v = screenshotcmd } },
 	{ MODKEY,                       XK_apostrophe, togglescratch,  {.v = scratchpadcmd } },
+	{ MODKEY,						XK_v,		   spawn,		   {.v = clipboard }     },
+	{ MODKEY,						XK_e,		   spawn,		   {.v = filemanager }   },
 	{ MODKEY,                       XK_b,          togglebar,      {0}                   },
 	{ MODKEY|ShiftMask,             XK_Right,      rotatestack,    {.i = +1 }            },
 	{ MODKEY|ShiftMask,             XK_Left,       rotatestack,    {.i = -1 }            },
