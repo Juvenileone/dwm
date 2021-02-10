@@ -49,6 +49,7 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "xdman",     NULL,       NULL,       0,            1,           -1 },
+	{ "EasyConnect", NULL,	   NULL,		0,				1,			-1},
 	/* { "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 }, */
 };
 
@@ -79,7 +80,8 @@ static const Layout layouts[] = {
 static char        dmenumon[2]   = "0";   /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[]    = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", dmenucolor, "-sf", col_gray4, "-l", dmenulist, "-i", "-bw", dmenuborderwidth, NULL };
 static const char *termcmd[]	= {"alacritty", NULL};
-static const char *browsercmd[]  = { "chromium", NULL };
+static const char *chromiumcmd[]  = { "chromium", NULL };
+static const char *vivaldicmd[]	= {"vivaldi-stable", NULL};
 
 static const char *upvolcmd[]       = { "/home/volta/.dwm/scripts/vol-up.sh",      NULL };
 static const char *downvolcmd[]     = { "/home/volta/.dwm/scripts/vol-down.sh",    NULL };
@@ -97,13 +99,14 @@ static const char *clipboard[] = { "diodon", NULL };
 static const char *filemanager[] = {"pcmanfm", NULL};
 
 
-static const char *lockcmd[] = {"i3lock-fancy", NULL};
+static const char *lockcmd[] = {"slock", NULL};
 
 static Key keys[] = {
 	/* modifier                     key            function        argument              */
 	{ MODKEY,                       XK_d,          spawn,          {.v = dmenucmd }      },
 	{ MODKEY,                       XK_Return,     spawn,          {.v = termcmd }       },
-	{ MODKEY,                       XK_c,          spawn,          {.v = browsercmd }    },
+	{ MODKEY,                       XK_c,          spawn,          {.v = chromiumcmd }    },
+	{ MODKEY,						XK_v,		   spawn,		   {.v = vivaldicmd }  },
 	{ MODKEY|ShiftMask,				XK_l,		   spawn,		   {.v = lockcmd }   },
 	{ MODKEY,             			XK_F3,         spawn,          {.v = upvolcmd }      },
 	{ MODKEY,             			XK_F2,         spawn,          {.v = downvolcmd }    },
@@ -112,7 +115,7 @@ static Key keys[] = {
 	{ MODKEY,             			XK_F11,        spawn,          {.v = downbacklightcmd } },
 	{ NULL,             			XK_Print,      spawn,          {.v = screenshotcmd } },
 	{ MODKEY,                       XK_apostrophe, togglescratch,  {.v = scratchpadcmd } },
-	{ MODKEY,						XK_v,		   spawn,		   {.v = clipboard }     },
+	{ MODKEY,						XK_semicolon,  spawn,		   {.v = clipboard }     },
 	{ MODKEY,						XK_e,		   spawn,		   {.v = filemanager }   },
 	{ MODKEY,                       XK_b,          togglebar,      {0}                   },
 	{ MODKEY|ShiftMask,             XK_Right,      rotatestack,    {.i = +1 }            },
@@ -141,7 +144,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_i,          incrovgaps,     {.i = -1 }            },
 	{ MODKEY|ShiftMask,             XK_Return,     zoom,           {0}                   },
 	{ MODKEY,                       XK_Tab,        view,           {0}                   },
-	{ MODKEY,			            XK_q,          killclient,     {0}                   },
+	{ MODKEY|ShiftMask,	            XK_q,          killclient,     {0}                   },
 	{ MODKEY|ShiftMask,             XK_t,          setlayout,      {.v = &layouts[0]}    },
 	{ MODKEY|ShiftMask,             XK_f,          setlayout,      {.v = &layouts[1]}    },
 	{ MODKEY|ShiftMask,             XK_m,          setlayout,      {.v = &layouts[2]}    },

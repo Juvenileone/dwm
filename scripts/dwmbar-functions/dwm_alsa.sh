@@ -7,7 +7,7 @@
 # Dependencies: alsa-utils
 
 dwm_alsa () {
-    VOL=$(amixer get Master | tail -n1 | sed -r "s/.*\[(.*)%\].*/\1/")
+    VOL=$(amixer -M get Master | tail -n1 | sed -r "s/.*\[(.*)%\].*/\1/")
     MUTE=$(amixer get Master | tail -n1 | sed -r "s/.*\[(on|off)\]$/\1/")
     printf "%s" "$SEP1"
     if [ "$MUTE" = "on" ]; then
